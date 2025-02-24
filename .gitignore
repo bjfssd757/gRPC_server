@@ -1,3 +1,4 @@
 nginx.conf
 target
 migrations
+src/hook.rs
