@@ -16,7 +16,6 @@ chrono = { version = "0.4.39", features = ["serde"] }
 prost-types = "0.13.5"
 lazy_static = "1.5.0"
 r2d2-diesel = "1.0.0"
-actix-web = "4.9.0"
 diesel = { version = "2.2.7", features = ["postgres", "r2d2"] }
 diesel_cli = { version = "2.2.7", default-features = false, features = ["postgres"] }
 
