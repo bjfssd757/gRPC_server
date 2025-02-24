@@ -18,6 +18,7 @@ lazy_static = "1.5.0"
 r2d2-diesel = "1.0.0"
 diesel = { version = "2.2.7", features = ["postgres", "r2d2"] }
 diesel_cli = { version = "2.2.7", default-features = false, features = ["postgres"] }
+actix-web = "4.9.0"
 
 [build-dependencies]
 tonic-build = "0.12.3"
