@@ -1,0 +1,59 @@
+syntax="proto3";
+
+package control;
+
+service Control {
+    rpc GetUser(UserRequest) returns (UserResponse);
+    rpc GetUsers(GetUsersRequest) returns (GetUsersResponse);
+    rpc AddUser(AddUserRequest) returns (AddUserResponse);
+    rpc RemoveUser(RemoveUserRequest) returns (RemoveUserResponse);
+    rpc ChangeUser(ChangeUserRequest) returns (ChangeUserResponse);
+}
+
+message UserRequest {
+    int64 id = 1;
+}
+
+message UserResponse {
+    User user = 1;
+}
+
+message GetUsersRequest {}
+
+message GetUsersResponse {
+    repeated User users = 1;
+}
+
+message AddUserRequest {
+    User users = 1;
+}
+
+message AddUserResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message RemoveUserRequest {
+    int64 id = 1;
+}
+
+message RemoveUserResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message ChangeUserRequest {
+    User user = 1;
+}
+
+message ChangeUserResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message User {
+    int64 id = 1;
+    string name = 2;
+    string role = 3;
+    int32 events = 4;
+}

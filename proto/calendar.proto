@@ -1,0 +1,65 @@
+syntax="proto3";
+
+package calendar;
+
+import "google/protobuf/timestamp.proto";
+
+service Calendar {
+    rpc GetEvent(EventRequest) returns (EventResponse);
+    rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
+    rpc AddEvent(AddEventRequest) returns (AddEventResponse);
+    rpc RemoveEvent(RemoveEventRequest) returns (RemoveEventResponse);
+    rpc ChangeEvent(ChangeEventRequest) returns (ChangeEventResponse);
+}
+
+message EventRequest {
+    int64 id = 1;
+}
+
+message EventResponse {
+    EventProto event = 1;
+}
+
+message GetEventsRequest {}
+
+message GetEventsResponse {
+    repeated EventProto events = 1;
+}
+
+message AddEventRequest {
+    EventProto event = 1;
+}
+
+message AddEventResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message RemoveEventRequest {
+    int64 id = 1;
+}
+
+message RemoveEventResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message ChangeEventRequest {
+    EventProto event = 1;
+}
+
+message ChangeEventResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message EventProto {
+    int64 id = 1;
+    string name = 2;
+    google.protobuf.Timestamp date = 3;
+    bool fulltime = 4;
+    string author = 5;
+    google.protobuf.Timestamp create_at = 6;
+    string location = 7;
+    string message = 8;
+}
