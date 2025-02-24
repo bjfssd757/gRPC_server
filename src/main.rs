@@ -28,7 +28,6 @@ mod proto {
 }
 mod schema;
 mod models;
-mod hook;
 
 lazy_static! {
     static ref POOL: r2d2::Pool<ConnectionManager<PgConnection>> = {
