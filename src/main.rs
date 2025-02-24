@@ -358,12 +358,28 @@ impl Admin for AdminService {
 // ------------------------------------------------------------\\
 */
 
+#[derive(Serialize, Deserialize, Debug)]
+struct Settings {
+    main: Address,
+    hook: Address,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+struct Address {
+    address: String,
+    port: String,
+}
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn  std::error::Error>> {
     dotenv().ok();
 
-    let addr = "[::1]:50051".parse()?;
+    let data = std::fs::read_to_string("settings/settings.json")?;
+
+    let settings: Settings = serde_json::from_str(&data)?;
+
+    let addr = format!("{}:{}", settings.main.address, settings.main.port)
+        .parse()?;
 
     /*let state = State::default();
 
