@@ -13,6 +13,12 @@
 
 Для запуска проекта вам потребуется скачать Rust.
 
+* Качаем protocol buffers [github репозиторий](https://github.com/protocolbuffers/protobuf)
+
+> [!TIP]
+> Если вы используете unix систему: ```apt install -y protobuf-compiler```
+> Если у вас возникли проблемы или вопросы на этом этапе, прочитайте [гайд по установке](https://grpc.io/docs/protoc-installation/)
+
 * Качаем Rust с [официального сайта](https://www.rust-lang.org/ru/tools/install)
 * Клонируем репозиторий: ```git clone https://github.com/bjfssd757/gRPC_server.git```
 * Запускаем сервер: ```cargo run --bin server```
