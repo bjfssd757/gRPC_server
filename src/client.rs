@@ -8,7 +8,7 @@ pub mod proto {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    let url = "http://194.87.74.119:7070/".to_string();
+    let url = "http://localhost:50051/".to_string();
 
     let mut client = CalendarClient::connect(url).await?;
     let req = proto::GetEventsRequest {};
