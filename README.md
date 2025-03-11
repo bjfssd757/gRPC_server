@@ -1,3 +1,5 @@
+![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
+
 # gRPC server
 
 Этот репозиторий реализует gRPC сервер на языке Rust
